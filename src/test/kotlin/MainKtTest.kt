@@ -28,7 +28,7 @@ class MainKtTest {
     fun getCommission_Visa() {
         val cardType = "VISA"
         val monthSum = 75000
-        var expected = 37
+        var expected = 35
         assertEquals(expected, getCommission(cardType, monthSum, transferAmount = 1000))
         expected = 75
         assertEquals(expected, getCommission(cardType, monthSum, transferAmount = 10000))
