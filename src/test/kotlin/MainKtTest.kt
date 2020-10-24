@@ -4,26 +4,24 @@ import org.junit.Test
 class MainKtTest {
 
     @Test
-    fun main() {
+    fun mainTest() {
+        main()
+        assertEquals(true, true)
     }
 
     @Test
     fun getCommission() {
         val expected = 0
-        val cardType = "Vk Pay"
-        val monthSum = 1000
         val transferAmount = 1000
-        val result = getCommission(cardType, monthSum, transferAmount)
+        val result = getCommission(transferAmount = transferAmount)
         assertEquals(expected, result)
     }
 
     @Test
     fun getCommission_MasterCard() {
         val expected = 0
-        val cardType = "MasterCard"
-        val monthSum = 75000
         val transferAmount = 1000
-        val result = getCommission(cardType, monthSum, transferAmount)
+        val result = getMasterCardCommission(transferAmount = transferAmount)
         assertEquals(expected, result)
     }
 
@@ -47,8 +45,5 @@ class MainKtTest {
         val result = getCommission(cardType, monthSum, transferAmount)
         assertEquals(expected, result)
     }
-
-
-
 
 }
